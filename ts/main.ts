@@ -10,31 +10,31 @@ btn_burger.onclick = () => {
 		listLinks.style.display = "none"
 	}
 }
+//Nav section hover 
+console.log(pageYOffset, document.getElementById("home")?.scrollHeight)
+const hijos = document.querySelector(".container") as HTMLDivElement;
+const articulos = hijos.querySelectorAll("article");
+const nav = document.getElementById("navbar") as HTMLDivElement;
+const botones = nav.querySelectorAll(".list-group-item");
 
-// Toggle navbar transparence
-let navigation = document.querySelector('.navbar') as HTMLMenuElement;
-window.addEventListener("scroll", (e) => {
-	if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-		navigation.classList.add('fadein');
-		navigation.classList.remove('hide');
-	} else {
-		navigation.classList.add('hide');
+for (let i = 0; i < articulos.length; i++) {
+	const articulo = articulos[i];
+	console.log(articulo);
+	console.log(articulo.scrollHeight);
+	if (pageYOffset >= articulo.scrollHeight && pageYOffset < articulos[i + 1].scrollHeight) {
+		
 	}
 }
-);
 
-
-/*const newNav = () => {
-  let navigation = document.querySelector('.nav');
-  window.addEventListener('scroll', () => {
-	if(document.body.scrollTop > 300 ||document.documentElement.scrollTop > 300 ) {
-	  navigation.classList.add('fadein');
-	  navigation.classList.remove('hide');
+/**document.addEventListener("scroll", () => {
+	if (window.pageYOffset != undefined) {
+		console.log([pageXOffset, pageYOffset]);
 	} else {
-	  navigation.classList.add('hide');
+		var sx, sy, d = document,
+			r = d.documentElement,
+			b = d.body;
+		sx = r.scrollLeft || b.scrollLeft || 0;
+		sy = r.scrollTop || b.scrollTop || 0;
+		console.log([sx, sy]);
 	}
-  });
-
-}
-
-newNav();*/
+});*/

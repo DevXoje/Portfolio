@@ -24,17 +24,66 @@ a {
     text-decoration: none;
 }
 
-div {
-    height: 500px;
+.header_section {
+    text-align: center;
+    h2 {
+        display: inline-block;
+        border-bottom: 4px solid #cefe1a;
+        margin-bottom: 50px;
+        padding: 0 10px 10px 10px;
+        font-size: 50px;
+    }
+}
+
+.header_content {
+    color: grey;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.list_card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    margin-bottom: 50px;
+    div {
+        background-color: #191919;
+        color: #8e8e8e;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        padding: 20px;
+        i {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-weight: bolder;
+        }
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 #navbar {
+    z-index: 10;
     position: fixed;
     width: 100%;
-    height: 90px;
     display: flex;
     justify-content: space-between;
-    padding: 15px 20px;
+    padding: 10px 20px;
     background-color: rgba($color: #000000, $alpha: 0.7);
     .navbar-brand {
         justify-self: self-start;
@@ -59,27 +108,18 @@ div {
         .list-group-item {
             background-color: transparent;
             border-color: transparent;
+            a {
+                color: grey;
+                transition: all 0.4s;
+                &:hover {
+                    font-weight: bolder;
+                    color: #ffffff;
+                }
+            }
             i {
                 display: none;
             }
         }
-        a {
-            color: white;
-            font-weight: bolder;
-            transition: color 0.4s;
-            &:hover {
-                color: #ffffff;
-            }
-        }
-    }
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
     }
 }
 
@@ -89,12 +129,8 @@ div {
     @media (min-width: $breakpoint-sm) {
         flex-direction: row;
         align-items: center;
-        justify-content: center;
-        .framePhoto {
-            margin-top: 100px;
-        }
+        justify-content: space-around;
     }
-    height: 500px;
     .bg-Home {
         z-index: -1;
         position: absolute;
@@ -104,12 +140,25 @@ div {
         filter: opacity(45%);
     }
     .framePhoto {
-        border: 2px solid black;
+        margin-top: 100px;
         width: 200px;
         height: 300px;
-        img {
+        .circular--portrait {
+            position: relative;
             width: 200px;
-            height: 300px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 50%;
+            img {
+                position: relative;
+                bottom: 30px;
+                width: 100%;
+                filter: grayscale(70%);
+                transition: filter 1s;
+                &:hover {
+                    filter: grayscale(0);
+                }
+            }
         }
     }
     .hello-text {
@@ -129,22 +178,20 @@ div {
 }
 
 #about {
-    height: 1000px;
     padding-top: 100px;
     .row {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-auto-rows: auto;
         grid-gap: 1rem;
+        .header_content {
+            text-align: start;
+        }
         @media (min-width: $breakpoint-md) {
             grid-template-columns: repeat(2, 1fr);
         }
         #whoIAm {
-            height: 300px;
             width: 500px;
-            .header_content {
-                margin-bottom: 20px;
-            }
             blockquote {
                 font-size: 40px;
                 font-weight: bolder;
@@ -162,80 +209,28 @@ div {
             }
         }
         #skills {
-            height: 400px;
             width: 500px;
-            .header_content {
-                margin-bottom: 20px;
-            }
-            .garelly_skills {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-auto-rows: auto;
-                grid-gap: 1rem;
-            }
             .card_skill {
-                padding: 35px;
                 border-radius: 5px;
                 text-align: center;
+                justify-content: center;
                 height: 180px;
-                width: 130px;
-                font-size: 40px;
-                color: #8e8e8e;
-                background-color: #191919;
-                transition: color 1s;
-                &:hover {
-                    color: white;
+                transition: color 0.3s;
+                p {
+                    font-size: 20px;
                 }
             }
         }
     }
 }
 
-.header_section {
-    margin-bottom: 50px;
-    h2 {
-        font-size: 50px;
-        text-align: center;
-    }
-}
-
-.header_content {
-    color: grey;
-    margin-bottom: 20px;
-}
-
-.list_card {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
-    grid-gap: 1rem;
-    div {
-        background-color: #191919;
-        height: 300px;
-    }
-}
-
 #services {
-    height: 900px;
-    .header_content {
-        text-align: center;
-    }
+    display: flex;
+    flex-direction: column;
     .list_card {
         .service {
-            color: #8e8e8e;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            i {
-                font-size: 70px;
-            }
-            h3 {
-                color: white;
-                font-weight: bolder;
-            }
             &:hover {
+                border-bottom: 4px solid #cefe1a;
                 i {
                     color: #cefe1a;
                 }
@@ -249,5 +244,16 @@ div {
 }
 
 #contact {
+    .list_card {
+        .contact_card {
+            i {
+                font-size: 50px;
+                margin-bottom: 10px;
+            }
+            h3 {
+                font-size: x-large;
+            }
+        }
+    }
     height: 900px;
 }

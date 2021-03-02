@@ -20,21 +20,93 @@ a {
   text-decoration: none;
 }
 
-div {
-  height: 500px;
+.header_section {
+  text-align: center;
+}
+
+.header_section h2 {
+  display: inline-block;
+  border-bottom: 4px solid #cefe1a;
+  margin-bottom: 50px;
+  padding: 0 10px 10px 10px;
+  font-size: 50px;
+}
+
+.header_content {
+  color: grey;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.list_card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+  margin-bottom: 50px;
+}
+
+.list_card div {
+  background-color: #191919;
+  color: #8e8e8e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+}
+
+.list_card div i {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.list_card div h3 {
+  font-weight: bolder;
+}
+
+.list_card div:hover {
+  color: white;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 #navbar {
+  z-index: 10;
   position: fixed;
   width: 100%;
-  height: 90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 15px 20px;
+  padding: 10px 20px;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -79,37 +151,19 @@ div {
   border-color: transparent;
 }
 
-#navbar .list-group .list-group-item i {
-  display: none;
+#navbar .list-group .list-group-item a {
+  color: grey;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
-#navbar .list-group a {
-  color: white;
+#navbar .list-group .list-group-item a:hover {
   font-weight: bolder;
-  -webkit-transition: color 0.4s;
-  transition: color 0.4s;
-}
-
-#navbar .list-group a:hover {
   color: #ffffff;
 }
 
-@-webkit-keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+#navbar .list-group .list-group-item i {
+  display: none;
 }
 
 #home {
@@ -120,7 +174,6 @@ div {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 500px;
 }
 
 @media (min-width: 768px) {
@@ -132,12 +185,8 @@ div {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  #home .framePhoto {
-    margin-top: 100px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
 }
 
@@ -152,14 +201,34 @@ div {
 }
 
 #home .framePhoto {
-  border: 2px solid black;
+  margin-top: 100px;
   width: 200px;
   height: 300px;
 }
 
-#home .framePhoto img {
+#home .framePhoto .circular--portrait {
+  position: relative;
   width: 200px;
-  height: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+#home .framePhoto .circular--portrait img {
+  position: relative;
+  bottom: 30px;
+  width: 100%;
+  -webkit-filter: grayscale(70%);
+          filter: grayscale(70%);
+  -webkit-transition: -webkit-filter 1s;
+  transition: -webkit-filter 1s;
+  transition: filter 1s;
+  transition: filter 1s, -webkit-filter 1s;
+}
+
+#home .framePhoto .circular--portrait img:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 
 #home .hello-text {
@@ -181,7 +250,6 @@ div {
 }
 
 #about {
-  height: 1000px;
   padding-top: 100px;
 }
 
@@ -194,6 +262,10 @@ div {
   grid-gap: 1rem;
 }
 
+#about .row .header_content {
+  text-align: start;
+}
+
 @media (min-width: 1100px) {
   #about .row {
     -ms-grid-columns: (1fr)[2];
@@ -202,12 +274,7 @@ div {
 }
 
 #about .row #whoIAm {
-  height: 300px;
   width: 500px;
-}
-
-#about .row #whoIAm .header_content {
-  margin-bottom: 20px;
 }
 
 #about .row #whoIAm blockquote {
@@ -230,78 +297,25 @@ div {
 }
 
 #about .row #skills {
-  height: 400px;
   width: 500px;
 }
 
-#about .row #skills .header_content {
-  margin-bottom: 20px;
-}
-
-#about .row #skills .garelly_skills {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  grid-gap: 1rem;
-}
-
 #about .row #skills .card_skill {
-  padding: 35px;
   border-radius: 5px;
   text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 180px;
-  width: 130px;
-  font-size: 40px;
-  color: #8e8e8e;
-  background-color: #191919;
-  -webkit-transition: color 1s;
-  transition: color 1s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
-#about .row #skills .card_skill:hover {
-  color: white;
-}
-
-.header_section {
-  margin-bottom: 50px;
-}
-
-.header_section h2 {
-  font-size: 50px;
-  text-align: center;
-}
-
-.header_content {
-  color: grey;
-  margin-bottom: 20px;
-}
-
-.list_card {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  grid-gap: 1rem;
-}
-
-.list_card div {
-  background-color: #191919;
-  height: 300px;
+#about .row #skills .card_skill p {
+  font-size: 20px;
 }
 
 #services {
-  height: 900px;
-}
-
-#services .header_content {
-  text-align: center;
-}
-
-#services .list_card .service {
-  color: #8e8e8e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -309,20 +323,10 @@ div {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  padding: 20px;
 }
 
-#services .list_card .service i {
-  font-size: 70px;
-}
-
-#services .list_card .service h3 {
-  color: white;
-  font-weight: bolder;
+#services .list_card .service:hover {
+  border-bottom: 4px solid #cefe1a;
 }
 
 #services .list_card .service:hover i {
@@ -335,5 +339,14 @@ div {
 
 #contact {
   height: 900px;
+}
+
+#contact .list_card .contact_card i {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+#contact .list_card .contact_card h3 {
+  font-size: x-large;
 }
 /*# sourceMappingURL=styles.css.map */
