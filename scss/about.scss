@@ -1,0 +1,66 @@
+@import "media";
+#about {
+    .header_content {
+        text-align: start;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @media (min-width: $breakpoint-md) {
+            flex-direction: row;
+            align-items: center;
+        }
+        #whoIAm {
+            margin-bottom: 50px;
+            @media (min-width: $breakpoint-md) {
+                margin-bottom: 0;
+                margin-right: 100px;
+            }
+            .header_content {
+                h3 {
+                    color: red;
+                }
+            }
+            blockquote {
+                font-size: 40px;
+                font-weight: bolder;
+            }
+            .content_whoIAm {
+                color: grey;
+                font-size: 20px;
+                line-height: 40px;
+            }
+            #btn_descargar {
+                background-color: #cefe1a;
+                width: 200px;
+                padding: 10px 0;
+                &:hover {
+                    background-color: white;
+                }
+            }
+        }
+        #skills {
+            //width: 500px;
+            width: 100%;
+            .list_card {
+                grid-template-columns: repeat(3, 1fr);
+                @media (min-width: $breakpoint-sm) {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+                @media (min-width: $breakpoint-md) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                .card_skill {
+                    padding: 35px;
+                    text-align: center;
+                    justify-content: center;
+                    transition: color 0.3s;
+                    p {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

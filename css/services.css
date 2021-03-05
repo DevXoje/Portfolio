@@ -1,0 +1,18 @@
+#services {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#services .list_card .service:hover {
+  border-bottom: 4px solid #cefe1a;
+}
+
+#services .list_card .service:hover i {
+  color: #cefe1a;
+}
+/*# sourceMappingURL=services.css.map */

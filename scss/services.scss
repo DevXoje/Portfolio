@@ -1,0 +1,14 @@
+#services {
+    display: flex;
+    flex-direction: column;
+    .list_card {
+        .service {
+            &:hover {
+                border-bottom: 4px solid #cefe1a;
+                i {
+                    color: #cefe1a;
+                }
+            }
+        }
+    }
+}

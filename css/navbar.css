@@ -1,0 +1,66 @@
+#navbar {
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 20px;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+#navbar .navbar-brand {
+  -ms-grid-column-align: self-start;
+      justify-self: self-start;
+  font-size: 2em;
+}
+
+#navbar .navbar-toggler-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #navbar .navbar-toggler-icon {
+    display: inline-block;
+    text-align: center;
+    padding: 8px;
+    font-size: 2em;
+  }
+}
+
+#navbar .list-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  #navbar .list-group {
+    display: none;
+  }
+}
+
+#navbar .list-group .list-group-item {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#navbar .list-group .list-group-item a {
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+  font-weight: bolder;
+}
+
+#navbar .list-group .list-group-item i {
+  display: none;
+}
+/*# sourceMappingURL=navbar.css.map */

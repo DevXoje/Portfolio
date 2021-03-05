@@ -10,8 +10,23 @@ btn_burger.onclick = () => {
 		listLinks.style.display = "none"
 	}
 }
+
+// Toggle Bg-c Navbar
+const navbar = document.getElementById("navbar") as HTMLDivElement;
+window.addEventListener("scroll", () => {
+	let transparencia = (window.scrollY <= navbar.scrollHeight) ? "0" : "0.7";
+	navbar.style.backgroundColor = `rgba(0, 0, 0, ${transparencia})`;
+});
+
+
+
+
+
+
+
+
 //Nav section hover 
-console.log(pageYOffset, document.getElementById("home")?.scrollHeight)
+//console.log(pageYOffset, document.getElementById("home")?.scrollHeight)
 const hijos = document.querySelector(".container") as HTMLDivElement;
 const articulos = hijos.querySelectorAll("article");
 const nav = document.getElementById("navbar") as HTMLDivElement;
@@ -19,10 +34,10 @@ const botones = nav.querySelectorAll(".list-group-item");
 
 for (let i = 0; i < articulos.length; i++) {
 	const articulo = articulos[i];
-	console.log(articulo);
-	console.log(articulo.scrollHeight);
+	//	console.log(articulo);
+	//	console.log(articulo.scrollHeight);
 	if (pageYOffset >= articulo.scrollHeight && pageYOffset < articulos[i + 1].scrollHeight) {
-		
+
 	}
 }
 

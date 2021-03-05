@@ -1,0 +1,13 @@
+@import "media";
+@import "img_effect";
+#portfolio {
+    .list_card {
+        div {
+            padding: 0;
+            i {
+                font-size: 12px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

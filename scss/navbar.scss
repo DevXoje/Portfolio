@@ -1,0 +1,42 @@
+@import "media";
+#navbar {
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    transition: background-color 0.5s;
+    .navbar-brand {
+        justify-self: self-start;
+        font-size: 2em;
+    }
+    .navbar-toggler-icon {
+        display: none;
+        @media (max-width: 768px) {
+            display: inline-block;
+            text-align: center;
+            padding: 8px;
+            font-size: 2em;
+        }
+    }
+    .list-group {
+        @media (max-width: 768px) {
+            display: none;
+        }
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        .list-group-item {
+            background-color: transparent;
+            border-color: transparent;
+            a {
+                transition: color 0.4s;
+                font-weight: bolder;
+            }
+            i {
+                display: none;
+            }
+        }
+    }
+}

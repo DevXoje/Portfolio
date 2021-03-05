@@ -1,0 +1,102 @@
+#about .header_content {
+  text-align: start;
+}
+
+#about main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media (min-width: 1100px) {
+  #about main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+#about main #whoIAm {
+  margin-bottom: 50px;
+}
+
+@media (min-width: 1100px) {
+  #about main #whoIAm {
+    margin-bottom: 0;
+    margin-right: 100px;
+  }
+}
+
+#about main #whoIAm .header_content h3 {
+  color: red;
+}
+
+#about main #whoIAm blockquote {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+#about main #whoIAm .content_whoIAm {
+  color: grey;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+#about main #whoIAm #btn_descargar {
+  background-color: #cefe1a;
+  width: 200px;
+  padding: 10px 0;
+}
+
+#about main #whoIAm #btn_descargar:hover {
+  background-color: white;
+}
+
+#about main #skills {
+  width: 100%;
+}
+
+#about main #skills .list_card {
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 768px) {
+  #about main #skills .list_card {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  #about main #skills .list_card {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+#about main #skills .list_card .card_skill {
+  padding: 35px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+#about main #skills .list_card .card_skill p {
+  font-size: 20px;
+}
+/*# sourceMappingURL=about.css.map */
