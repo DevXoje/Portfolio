@@ -96,6 +96,10 @@
   transition: color 0.3s;
 }
 
+#about main #skills .list_card .card_skill img {
+  display: none;
+}
+
 #about main #skills .list_card .card_skill p {
   font-size: 20px;
 }
